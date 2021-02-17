@@ -1,6 +1,6 @@
-# flutterspring
+# flutter-Spring
 
-A new Flutter application.
+A new Flutter + Spring Boot application.
 
 ## Getting Started
 
