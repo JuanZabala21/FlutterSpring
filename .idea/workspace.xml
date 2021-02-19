@@ -7,9 +7,6 @@
     <list default="true" id="467e601f-f7a7-4a58-82b3-444e9a65b8fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/flutterspring/app/controllers/UserControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flutterspring/app/controllers/UserControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flutterspring/app/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flutterspring/app/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/flutterspring/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flutterspring/app/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,19 +51,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Spring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="flutterspring.app.AppApplication" />
@@ -84,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613662520929</updated>
       <workItem from="1613662525793" duration="14805000" />
-      <workItem from="1613736944579" duration="2170000" />
+      <workItem from="1613736944579" duration="5999000" />
     </task>
     <servers />
   </component>
