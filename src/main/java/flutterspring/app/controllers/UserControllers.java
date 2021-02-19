@@ -17,14 +17,17 @@ public class UserControllers {
     public User addUser(@RequestBody User user){
         return service.SaveUser(user);
     }
+
     @GetMapping("/users")
     public List<User> findAllUsers(){
         return service.getUsers();
     }
+
     @DeleteMapping("/deleteUser")
     public String deleteUser(@PathVariable int id){
         return service.deleteUser(id);
     }
+
     @PutMapping
     public User updateUser(@RequestBody User user){
         return service.updateUser(user);
