@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="467e601f-f7a7-4a58-82b3-444e9a65b8fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/listuser.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/addUserPage.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/databasehelper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/datapage.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/editpage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/listuser.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/listuser.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -75,7 +75,9 @@
       <updated>1613662520929</updated>
       <workItem from="1613662525793" duration="14805000" />
       <workItem from="1613736944579" duration="5999000" />
-      <workItem from="1613743410095" duration="3555000" />
+      <workItem from="1613743410095" duration="5994000" />
+      <workItem from="1614001622290" duration="58000" />
+      <workItem from="1614001946041" duration="2424000" />
     </task>
     <servers />
   </component>

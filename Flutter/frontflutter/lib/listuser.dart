@@ -4,6 +4,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'addUserPage.dart';
+import 'datapage.dart';
+
 class ListUsers extends StatefulWidget {
   @override
   _ListUsersState createState() => _ListUsersState();
@@ -17,6 +20,18 @@ class _ListUsersState extends State<ListUsers> {
     return json.decode(response.body);
   }
 
+  _navigateAddUser(BuildContext context) async{
+    final result = await Navigator.push(context,
+        MaterialPageRoute(builder: (context) => AddUserPage()),
+    );
+
+    if(result) {
+      setState(() {
+
+      });
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -25,9 +40,16 @@ class _ListUsersState extends State<ListUsers> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: Text('Lista de Usuarios'),
-        actions: []),
+        actions: [
+          RaisedButton(
+            color: Colors.black,
+            child: Icon(Icons.add),
+            onPressed: () => _navigateAddUser(context),
+          )
+        ]),
         body: FutureBuilder<List>(
         future: getData() ,
         builder: (context, snapshot) {
@@ -46,7 +68,9 @@ class _ListUsersState extends State<ListUsers> {
 
 class ItemList extends StatelessWidget {
   final List list;
+
   ItemList({this.list});
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +82,8 @@ class ItemList extends StatelessWidget {
             new Container(
               padding:const EdgeInsets.all(10.0),
               child:new GestureDetector(
-                onTap: (){},
+                onTap: () => Navigator.of(context).push(
+                  builder: (BuildContext context) => Detail(list: list, index: i)),
                 child: Container(
                   height: 100.3,
                   child:new Card(
@@ -83,6 +108,21 @@ class ItemList extends StatelessWidget {
                           ],
                          ),
                        ),
+                        Padding(
+                            padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Text(
+                                  list[i]['email'].toString(),
+                                  style: TextStyle(
+                                    fontSize: 20.0, color: Colors.black87,
+                                ),
+                              ),
+                             ),
+                            ],
+                         ),
+                        ),
                       ],
                     ),
                   ),
