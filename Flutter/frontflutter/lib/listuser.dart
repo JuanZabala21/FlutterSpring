@@ -74,70 +74,71 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: List == null ? 0 : list.length,
-      itemBuilder: (context, i){
+    return new ListView.builder(
+      itemCount: list == null ? 0 : list.length,
+      itemBuilder: (context, i) {
         return Column(
           children: [
             new Container(
-              padding:const EdgeInsets.all(10.0),
-              child:new GestureDetector(
+              padding: const EdgeInsets.all(10.0),
+              child: new GestureDetector(
                 onTap: () => Navigator.of(context).push(
-                  builder: (BuildContext context) => Detail(list: list, index: i)),
+                  new MaterialPageRoute(
+                      builder: (BuildContext context) => new Detail(
+                        list: list,
+                        index: i,
+                      )),
+                ),
                 child: Container(
+                  //color: Colors.black,
                   height: 100.3,
-                  child:new Card(
+                  child: new Card(
                     color: Colors
                         .primaries[Random().nextInt(Colors.primaries.length)],
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.min, // add this
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                       Padding(
-                           padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                         Container(
-                         child: Text(
-                           list[i]['name'].toString(),
-                            style: TextStyle(
-                                fontSize: 20.0, color: Colors.black87,
-                            ),
-                           ),
-                          ),
-                          ],
-                         ),
-                       ),
                         Padding(
-                            padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Row(
                             children: [
                               Container(
                                 child: Text(
-                                  list[i]['email'].toString(),
+                                  list[i]['name'].toString(),
                                   style: TextStyle(
-                                    fontSize: 20.0, color: Colors.black87,
+                                      fontSize: 20.0, color: Colors.black87),
                                 ),
                               ),
-                             ),
                             ],
-                         ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Text(
+                                  list[i]['price'].toString(),
+                                  style: TextStyle(
+                                      fontSize: 20.0, color: Colors.black87),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              )
-            )
-          ]
+              ),
+            ),
+          ],
         );
-      }
+      },
     );
   }
 }
-
-
-
 
 
 

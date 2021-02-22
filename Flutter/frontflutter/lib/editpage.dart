@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:frontflutter/databasehelper.dart';
 import 'package:frontflutter/listuser.dart';
 
-class EditUserPage extends StatefulWidget {
+import 'databasehelper.dart';
+
+class EditUsers extends StatefulWidget {
   final List list;
   final int index;
 
-  const EditUserPage(this.list, this.index);
+  EditUsers({this.list, this.index});
 
   @override
-  _EditUserPageState createState() => _EditUserPageState();
+  _EditUsers createState() => _EditUsers();
 }
 
-class _EditUserPageState extends State<EditUserPage> {
-
-  DataBaseHelper databasehelper = DataBaseHelper();
+class _EditUsers extends State<EditUsers> {
+  DataBaseHelper databaseHelper = new DataBaseHelper();
 
   TextEditingController controllerName;
   TextEditingController controllerEmail;
@@ -25,109 +25,108 @@ class _EditUserPageState extends State<EditUserPage> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => ListUsers()),
-  );
+    );
 
     if (result) {
-      setState(() {
-      });
+      setState(() {});
+    }
   }
-}
 
-@override
-void initState(){
+  @override
+  void initState() {
     controllerId = new TextEditingController(
-      text: widget.list[widget.index]['id'].toString());
+        text: widget.list[widget.index]['id'].toString());
     controllerName = new TextEditingController(
-      text: widget.list[widget.index]['name'].toString());
-    controllerEmail = new TextEditingController(
-      text: widget.list[widget.index]['email'].toString());
+        text: widget.list[widget.index]['name'].toString());
     controllerAddress = new TextEditingController(
-      text: widget.list[widget.index]['address'].toString());
+        text: widget.list[widget.index]['address'].toString());
+    controllerEmail = new TextEditingController(
+        text: widget.list[widget.index]['email'].toString());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
+      // appBar: new AppBar(
+      //   title: new Text("Edit product"),
+      // ),
       body: Form(
         child: ListView(
           padding: const EdgeInsets.all(10.0),
-          children: [
-            Column(children: [
-              ListTile(
-              leading: const Icon(Icons.person, color: Colors.black),
-              title: new TextFormField(
-                controller: controllerId,
-                decoration: new InputDecoration(
-                  hintText: "Id",
-                  labelText: "Id",
-                 ),
-               ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.person, color: Colors.black),
-                title: new TextFormField(
-                  controller: controllerName,
-                  validator: (value) {
-                    if (value.isEmpty) 
-                      return "name"; 
-                  },
-                  decoration: new InputDecoration(
-                    hintText: "name",
-                    labelText: "name",
+          children: <Widget>[
+            new Column(
+              children: <Widget>[
+                new ListTile(
+                  leading: const Icon(Icons.person, color: Colors.black),
+                  title: new TextFormField(
+                    controller: controllerId,
+                    decoration: new InputDecoration(
+                      hintText: "Id",
+                      labelText: "Id",
+                    ),
                   ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.person, color: Colors.black),
-                title: new TextFormField(
-                  controller: controllerEmail,
-                  validator: (value) {
-                    if (value.isEmpty)
-                      return "email";
-                  },
-                  decoration: new InputDecoration(
-                    hintText: "Email",
-                    labelText: "Email",
+                new ListTile(
+                  leading: const Icon(Icons.person, color: Colors.black),
+                  title: new TextFormField(
+                    controller: controllerName,
+                    validator: (value) {
+                      if (value.isEmpty) return "name";
+                    },
+                    decoration: new InputDecoration(
+                      hintText: "Name",
+                      labelText: "Name",
+                    ),
                   ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.person, color: Colors.black),
-                title: new TextFormField(
-                  controller: controllerAddress,
-                  validator: (value) {
-                    if (value.isEmpty)
-                      return "address";
-                  },
-                  decoration: new InputDecoration(
-                    hintText: "Address",
-                    labelText: "Address",
+                new ListTile(
+                  leading: const Icon(Icons.location_on, color: Colors.black),
+                  title: new TextFormField(
+                    controller: controllerAddress,
+                    validator: (value) {
+                      if (value.isEmpty) return "Price";
+                    },
+                    decoration: new InputDecoration(
+                      hintText: "Price",
+                      labelText: "Price",
+                    ),
                   ),
                 ),
-              ),
-              const Divider(
-                height: 1.0,
-              ),
-              new Padding(
-                padding: const EdgeInsets.all(10.0)
-              ),
-              RaisedButton(
-                child: new Text("Edit"),
-                color: Colors.blueAccent,
-                onPressed: () {
-                   databasehelper.editUser
-                     (
-                       idController.text.trim(),
-                       nameController.text.trim(),
-                       emailController.text.trim(),
-                       addressController.text.trim()
-                     );
-                  _navigateList(context);
-                },
-               )
-             ],
-            )
+                new ListTile(
+                  leading: const Icon(Icons.settings_input_component,
+                      color: Colors.black),
+                  title: new TextFormField(
+                    controller: controllerEmail,
+                    validator: (value) {
+                      if (value.isEmpty) return "Ingresa Stock";
+                    },
+                    decoration: new InputDecoration(
+                      hintText: "quantity",
+                      labelText: "quantity",
+                    ),
+                  ),
+                ),
+                const Divider(
+                  height: 1.0,
+                ),
+                new Padding(
+                  padding: const EdgeInsets.all(10.0),
+                ),
+                new RaisedButton(
+                  child: new Text("Edit"),
+                  color: Colors.blueAccent,
+                  onPressed: () {
+                    databaseHelper.editUser(
+                        controllerId.text.trim(),
+                        controllerName.text.trim(),
+                        controllerEmail.text.trim(),
+                        controllerAddress.text.trim());
+                    _navigateList(context);
+                  },
+                )
+              ],
+            ),
           ],
         ),
       ),

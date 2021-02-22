@@ -1,36 +1,41 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class DataBaseHelper {
-
-  Future<http.Response> addUser (String nameController, String emailController, String addressController, void pop) async {
-  var url = "http://10.1.209.95:8787/addUser";
-  Map data = {
-    'name': '$nameController',
-    'email': '$emailController',
-    'address': '$addressController'
-  };
-
-  var body = json.encode(data);
-  var response = await http.post(url,
-  headers: {"Content-Type": "application/json"}, body: body);
-  print("${response.statusCode}");
-  print("${response.body}");
-  return response;
-   }
-
-   //Update
-  Future<http.Response> editUser (String id, String nameController, String emailController, String addressController, void pop) async {
-    int a = int.parse(id);
-    print(a);
-    var url = "http://10.1.209.95:8787/update";
+  //Funcion para agregar un producto a la BD
+  Future<http.Response> addUser(String nameController,
+      String emailController, String addressController) async {
+    var url = 'http://10.1.209.95/addUser';
 
     Map data = {
       'name': '$nameController',
-      'email': '$emailController',
-      'address': '$addressController'
+      'quantity': '$emailController',
+      'price': '$addressController',
     };
+    //encode Map to JSON
+    var body = json.encode(data);
 
+    var response = await http.post(url,
+        headers: {"Content-Type": "application/json"}, body: body);
+    print("${response.statusCode}");
+    print("${response.body}");
+    return response;
+  }
+
+  //function for update or put
+  Future<http.Response> editUser(String id, String nameController,
+      String quantityController, String priceController) async {
+    int a = int.parse(id);
+    print(a);
+    var url = 'http://10.1.209.95/update';
+
+    Map data = {
+      'id': '$a',
+      'name': '$nameController',
+      'quantity': '$quantityController',
+      'price': '$priceController',
+    };
+    //encode Map to JSON
     var body = json.encode(data);
 
     var response = await http.put(url,
@@ -39,14 +44,28 @@ class DataBaseHelper {
     print("${response.body}");
     return response;
   }
-  Future<http.Response> removeRegister (String id) async {
+  // void editarProduct(
+  //     String _id, String name, String price, String stock) async {
+
+  //   String myUrl = "http://192.168.1.56:3000/product/$_id";
+  //   http.put(myUrl, body: {
+  //     "name": "$name",
+  //     "price": "$price",
+  //     "stock": "$stock"
+  //   }).then((response) {
+  //     print('Response status : ${response.statusCode}');
+  //     print('Response body : ${response.body}');
+  //   });
+  // }
+
+  //Funcion para agregar un producto a la BD
+  Future<http.Response> removeRegister(String id) async {
     int a = int.parse(id);
     print(a);
-    var url = "http://10.1.209.95:8787/delete/$a";
+    var url = 'http://10.1.209.95/delete/$a';
 
     var response =
-    await http.delete(url,
-        headers: {"Content-Type": "application/json"}, body: body);
+    await http.delete(url, headers: {"Content-Type": "application/json"});
     print("${response.statusCode}");
     return response;
   }
