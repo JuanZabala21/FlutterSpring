@@ -30,7 +30,7 @@ class _AddUserPageState extends State<AddUserPage> {
               controller: nameController,
               decoration: InputDecoration(
                 labelText: 'name',
-                hintText: 'Product name',
+                hintText: 'name',
                 icon: new Icon(Icons.person),
               ),
             ),
@@ -41,7 +41,7 @@ class _AddUserPageState extends State<AddUserPage> {
               controller: emailController,
               decoration: InputDecoration(
                 labelText: 'email',
-                hintText: 'Product Name',
+                hintText: 'email',
                 icon: new Icon(Icons.email),
               )
             )
@@ -52,7 +52,7 @@ class _AddUserPageState extends State<AddUserPage> {
               controller: addressController,
               decoration: InputDecoration(
                 labelText: 'address',
-                hintText: 'Product Name',
+                hintText: 'address',
                 icon: new Icon(Icons.place),
               ),
              ),

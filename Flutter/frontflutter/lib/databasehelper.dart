@@ -2,15 +2,15 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class DataBaseHelper {
-  //Funcion para agregar un producto a la BD
+  //Funcion para agregar un usuario a la BD
   Future<http.Response> addUser(String nameController,
       String emailController, String addressController) async {
     var url = 'http://10.1.209.95/addUser';
 
     Map data = {
       'name': '$nameController',
-      'quantity': '$emailController',
-      'price': '$addressController',
+      'email': '$emailController',
+      'address': '$addressController',
     };
     //encode Map to JSON
     var body = json.encode(data);
@@ -24,7 +24,7 @@ class DataBaseHelper {
 
   //function for update or put
   Future<http.Response> editUser(String id, String nameController,
-      String quantityController, String priceController) async {
+      String emailController, String addressController) async {
     int a = int.parse(id);
     print(a);
     var url = 'http://10.1.209.95/update';
@@ -32,8 +32,8 @@ class DataBaseHelper {
     Map data = {
       'id': '$a',
       'name': '$nameController',
-      'quantity': '$quantityController',
-      'price': '$priceController',
+      'email': '$emailController',
+      'address': '$addressController',
     };
     //encode Map to JSON
     var body = json.encode(data);
@@ -44,10 +44,10 @@ class DataBaseHelper {
     print("${response.body}");
     return response;
   }
-  // void editarProduct(
+  // void editarUser(
   //     String _id, String name, String price, String stock) async {
 
-  //   String myUrl = "http://192.168.1.56:3000/product/$_id";
+  //   String myUrl = "http://192.168.1.56:3000/editUser/$_id";
   //   http.put(myUrl, body: {
   //     "name": "$name",
   //     "price": "$price",
@@ -58,7 +58,6 @@ class DataBaseHelper {
   //   });
   // }
 
-  //Funcion para agregar un producto a la BD
   Future<http.Response> removeRegister(String id) async {
     int a = int.parse(id);
     print(a);

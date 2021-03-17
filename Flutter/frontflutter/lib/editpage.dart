@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontflutter/listuser.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 import 'databasehelper.dart';
 
@@ -16,10 +17,10 @@ class EditUsers extends StatefulWidget {
 class _EditUsers extends State<EditUsers> {
   DataBaseHelper databaseHelper = new DataBaseHelper();
 
+  TextEditingController controllerId;
   TextEditingController controllerName;
   TextEditingController controllerEmail;
   TextEditingController controllerAddress;
-  TextEditingController controllerId;
 
   _navigateList(BuildContext context) async {
     final result = await Navigator.push(
@@ -38,19 +39,16 @@ class _EditUsers extends State<EditUsers> {
         text: widget.list[widget.index]['id'].toString());
     controllerName = new TextEditingController(
         text: widget.list[widget.index]['name'].toString());
-    controllerAddress = new TextEditingController(
-        text: widget.list[widget.index]['address'].toString());
     controllerEmail = new TextEditingController(
         text: widget.list[widget.index]['email'].toString());
+    controllerAddress = new TextEditingController(
+        text: widget.list[widget.index]['address'].toString());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      // appBar: new AppBar(
-      //   title: new Text("Edit product"),
-      // ),
       body: Form(
         child: ListView(
           padding: const EdgeInsets.all(10.0),
@@ -80,30 +78,31 @@ class _EditUsers extends State<EditUsers> {
                     ),
                   ),
                 ),
-                new ListTile(
-                  leading: const Icon(Icons.location_on, color: Colors.black),
-                  title: new TextFormField(
-                    controller: controllerAddress,
-                    validator: (value) {
-                      if (value.isEmpty) return "Price";
-                    },
-                    decoration: new InputDecoration(
-                      hintText: "Price",
-                      labelText: "Price",
-                    ),
-                  ),
-                ),
+
                 new ListTile(
                   leading: const Icon(Icons.settings_input_component,
                       color: Colors.black),
                   title: new TextFormField(
                     controller: controllerEmail,
                     validator: (value) {
-                      if (value.isEmpty) return "Ingresa Stock";
+                      if (value.isEmpty) return "Ingresa email";
                     },
                     decoration: new InputDecoration(
-                      hintText: "quantity",
-                      labelText: "quantity",
+                      hintText: "email",
+                      labelText: "email",
+                    ),
+                  ),
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.location_on, color: Colors.black),
+                  title: new TextFormField(
+                    controller: controllerAddress,
+                    validator: (value) {
+                      if (value.isEmpty) return "address";
+                    },
+                    decoration: new InputDecoration(
+                      hintText: "address",
+                      labelText: "address",
                     ),
                   ),
                 ),
@@ -115,7 +114,7 @@ class _EditUsers extends State<EditUsers> {
                 ),
                 new RaisedButton(
                   child: new Text("Edit"),
-                  color: Colors.blueAccent,
+                  color: HexColor("#3EBED0"),
                   onPressed: () {
                     databaseHelper.editUser(
                         controllerId.text.trim(),

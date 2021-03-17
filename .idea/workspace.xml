@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="467e601f-f7a7-4a58-82b3-444e9a65b8fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/addUserPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/databasehelper.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/datapage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/editpage.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/listuser.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/listuser.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/addUserPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/addUserPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/databasehelper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/databasehelper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/lib/editpage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/lib/editpage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Flutter/frontflutter/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/flutterspring/app/controllers/UserControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/flutterspring/app/controllers/UserControllers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,12 @@
       <workItem from="1613736944579" duration="5999000" />
       <workItem from="1613743410095" duration="5994000" />
       <workItem from="1614001622290" duration="58000" />
-      <workItem from="1614001946041" duration="2424000" />
+      <workItem from="1614001946041" duration="3045000" />
+      <workItem from="1614085819503" duration="1236000" />
+      <workItem from="1614105677921" duration="49000" />
+      <workItem from="1614173663305" duration="154000" />
+      <workItem from="1614173881174" duration="5581000" />
+      <workItem from="1614258707702" duration="578000" />
     </task>
     <servers />
   </component>
